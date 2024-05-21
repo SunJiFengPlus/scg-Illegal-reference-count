@@ -1,0 +1,341 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jmeterTestPlan version="1.2" properties="5.0" jmeter="5.6">
+  <hashTree>
+    <TestPlan guiclass="TestPlanGui" testclass="TestPlan" testname="cib_gateway">
+      <boolProp name="TestPlan.tearDown_on_shutdown">true</boolProp>
+      <elementProp name="TestPlan.user_defined_variables" elementType="Arguments" guiclass="ArgumentsPanel" testclass="Arguments" testname="User Defined Variables">
+        <collectionProp name="Arguments.arguments"/>
+      </elementProp>
+    </TestPlan>
+    <hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP请求">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xd;
+&lt;TX&gt;&#xd;
+    &lt;TX_HEADER&gt;&#xd;
+        &lt;SYS_HDR_LEN/&gt;&#xd;
+        &lt;SYS_PKG_VRSN&gt;01&lt;/SYS_PKG_VRSN&gt;&#xd;
+        &lt;SYS_HDR_LEN/&gt;&#xd;
+        &lt;SYS_REQ_SEC_ID&gt;1130201&lt;/SYS_REQ_SEC_ID&gt;&#xd;
+        &lt;SYS_SND_SEC_ID&gt;102016&lt;/SYS_SND_SEC_ID&gt;&#xd;
+        &lt;SYS_TX_CODE&gt;tx001&lt;/SYS_TX_CODE&gt;&#xd;
+        &lt;SY5_TX_VRSN&gt;01&lt;/SY5_TX_VRSN&gt;&#xd;
+        &lt;SYS_TX_TYPE&gt;620000&lt;/SYS_TX_TYPE&gt;&#xd;
+        &lt;SYS_RESERVED/&gt;&#xd;
+        &lt;SYS_EVT_TRACE_ID&gt;1020162521701159980059477&lt;/SYS_EVT_TRACE_ID&gt;&#xd;
+        &lt;SYS_SND_SERIAL_NO&gt;0000000000&lt;/SYS_SND_SERIAL_NO&gt;&#xd;
+        &lt;SYS_PKG_TYPE&gt;1&lt;/SYS_PKG_TYPE&gt;&#xd;
+        &lt;SYS_MSG_LEN/&gt;&#xd;
+        &lt;SYS_IS_ENCRYPTED&gt;O&lt;/SYS_IS_ENCRYPTED&gt;&#xd;
+        &lt;SYS_ENCRYPT_TYPE&gt;3&lt;/SYS_ENCRYPT_TYPE&gt;&#xd;
+        &lt;SYS_COMPRESS_TYPE&gt;O&lt;/SYS_COMPRESS_TYPE&gt;&#xd;
+        &lt;SYS_EMB_MSG_LEN/&gt;&#xd;
+        &lt;SYS_REQ_TIME&gt;20231128162620323&lt;/SYS_REQ_TIME&gt;&#xd;
+        &lt;SYS_TIME_LEFT&gt;000120000&lt;/SYS_TIME_LEFT&gt;&#xd;
+        &lt;SYS_PKG_STS_TYPE&gt;00&lt;/SYS_PKG_STS_TYPE&gt;&#xd;
+        &lt;SYS_SEC_CONTEXT_LEN/&gt;&#xd;
+    &lt;/TX_HEADER&gt;&#xd;
+    &lt;TX_BODY&gt;&#xd;
+        &lt;COMON&gt;&#xd;
+            &lt;COM1&gt;&#xd;
+                &lt;TXN_INSID&gt;010111111&lt;/TXN_INSID&gt;&#xd;
+                &lt;TXN_ITT_CHNL_ID&gt;001&lt;/TXN_ITT_CHNL_ID&gt;&#xd;
+                &lt;TXN_ITT_CHNL_CGY_CODE&gt;99999999&lt;/TXN_ITT_CHNL_CGY_CODE&gt;&#xd;
+                &lt;TXN_DT&gt;20231128&lt;/TXN_DT&gt;&#xd;
+                &lt;TXN_TM&gt;162620&lt;/TXN_TM&gt;&#xd;
+                &lt;TXN_STFF_ID&gt;50087150&lt;/TXN_STFF_ID&gt;&#xd;
+                &lt;MULTI_TENANCY_ID&gt;CNOOO&lt;/MULTI_TENANCY_ID&gt;&#xd;
+                &lt;MULTILTENANCY_NAME&gt;中国建设银行&lt;/MULTILTENANCY_NAME&gt;&#xd;
+                &lt;LOC_CCY&gt;CNY&lt;/LOC_CCY&gt;&#xd;
+                &lt;COUN_CD&gt;CHN&lt;/COUN_CD&gt;&#xd;
+                &lt;LNG_ID&gt;zh-cn&lt;/LNG_ID&gt;&#xd;
+                &lt;BSN_MT_ENT_IDR&gt;CN0OO&lt;/BSN_MT_ENT_IDR&gt;&#xd;
+                &lt;TM_ZONE&gt;UTC+8&lt;/TM_ZONE&gt;&#xd;
+                &lt;TM_DIF&gt;0&lt;/TM_DIF&gt;&#xd;
+                &lt;TM_ORG&gt;000000000&lt;/TM_ORG&gt;&#xd;
+                &lt;BAL_ORG&gt;000000000&lt;/BAL_ORG&gt;&#xd;
+                &lt;ACC_ID&gt;0&lt;/ACC_ID&gt;&#xd;
+                &lt;CLIENT_TM&gt;UTC+8&lt;/CLIENT_TM&gt;&#xd;
+            &lt;/COM1&gt;&#xd;
+            &lt;COM2&gt;&#xd;
+                &lt;BLNG_INST_NM&gt;某某事业群&lt;/BLNG_INST_NM&gt;&#xd;
+                &lt;EMPE_NM&gt;某二五&lt;/EMPE_NM&gt;&#xd;
+                &lt;PID&gt;G005b0000002&lt;/PID&gt;&#xd;
+            &lt;/COM2&gt;&#xd;
+            &lt;COM7&gt;&#xd;
+                &lt;CALL_PRTY_LGC_SBM_ID&gt;AP007&lt;/CALL_PRTY_LGC_SBM_ID&gt;&#xd;
+                &lt;CALL_PRTY_SVC_ID&gt;TESTTX001&lt;/CALL_PRTY_SVC_ID&gt;&#xd;
+                &lt;CALL_PRTY_TXNSRLNO/&gt;&#xd;
+            &lt;/COM7&gt;&#xd;
+        &lt;/COMON&gt;&#xd;
+        &lt;ENTITY&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY1&gt;00000&lt;/BUSINESS_CUSTOM_KEY1&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY2&gt;00000&lt;/BUSINESS_CUSTOM_KEY2&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY3&gt;00000&lt;/BUSINESS_CUSTOM_KEY3&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY4&gt;00000&lt;/BUSINESS_CUSTOM_KEY4&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY5&gt;00000&lt;/BUSINESS_CUSTOM_KEY5&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY6&gt;00000&lt;/BUSINESS_CUSTOM_KEY6&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY7&gt;00000&lt;/BUSINESS_CUSTOM_KEY7&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY8&gt;00000&lt;/BUSINESS_CUSTOM_KEY8&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY9&gt;00000&lt;/BUSINESS_CUSTOM_KEY9&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY10&gt;00000&lt;/BUSINESS_CUSTOM_KEY10&gt;&#xd;
+            &lt;DUPLICATE_KEY&gt;duplicate-value1&lt;/DUPLICATE_KEY&gt;&#xd;
+            &lt;DUPLICATE_KEY&gt;duplicate-value2&lt;/DUPLICATE_KEY&gt;&#xd;
+        &lt;/ENTITY&gt;&#xd;
+    &lt;/TX_BODY&gt;&#xd;
+    &lt;TX_EMB/&gt;&#xd;
+&lt;/TX&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.path">/hello</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">tx-code</stringProp>
+                <stringProp name="Header.value">tx001</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">Content-Type</stringProp>
+                <stringProp name="Header.value">application/xml</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树">
+          <boolProp name="ResultCollector.error_logging">false</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="568232580">HELLO WORLD</stringProp>
+          </collectionProp>
+          <stringProp name="Assertion.custom_message"></stringProp>
+          <stringProp name="Assertion.test_field">Assertion.response_data</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">2</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+      <ThreadGroup guiclass="ThreadGroupGui" testclass="ThreadGroup" testname="线程组">
+        <elementProp name="ThreadGroup.main_controller" elementType="LoopController" guiclass="LoopControlPanel" testclass="LoopController" testname="循环控制器">
+          <intProp name="LoopController.loops">-1</intProp>
+        </elementProp>
+        <stringProp name="ThreadGroup.num_threads">50</stringProp>
+        <stringProp name="ThreadGroup.ramp_time">1</stringProp>
+        <boolProp name="ThreadGroup.scheduler">true</boolProp>
+        <stringProp name="ThreadGroup.duration">300</stringProp>
+        <stringProp name="ThreadGroup.delay"></stringProp>
+      </ThreadGroup>
+      <hashTree>
+        <HTTPSamplerProxy guiclass="HttpTestSampleGui" testclass="HTTPSamplerProxy" testname="HTTP请求">
+          <boolProp name="HTTPSampler.postBodyRaw">true</boolProp>
+          <elementProp name="HTTPsampler.Arguments" elementType="Arguments">
+            <collectionProp name="Arguments.arguments">
+              <elementProp name="" elementType="HTTPArgument">
+                <stringProp name="Argument.value">&lt;?xml version=&quot;1.0&quot; encoding=&quot;UTF-8&quot;?&gt;&#xd;
+&lt;TX&gt;&#xd;
+    &lt;TX_HEADER&gt;&#xd;
+        &lt;SYS_HDR_LEN/&gt;&#xd;
+        &lt;SYS_PKG_VRSN&gt;01&lt;/SYS_PKG_VRSN&gt;&#xd;
+        &lt;SYS_HDR_LEN/&gt;&#xd;
+        &lt;SYS_REQ_SEC_ID&gt;1130201&lt;/SYS_REQ_SEC_ID&gt;&#xd;
+        &lt;SYS_SND_SEC_ID&gt;102016&lt;/SYS_SND_SEC_ID&gt;&#xd;
+        &lt;SYS_TX_CODE&gt;tx002&lt;/SYS_TX_CODE&gt;&#xd;
+        &lt;SY5_TX_VRSN&gt;01&lt;/SY5_TX_VRSN&gt;&#xd;
+        &lt;SYS_TX_TYPE&gt;620000&lt;/SYS_TX_TYPE&gt;&#xd;
+        &lt;SYS_RESERVED/&gt;&#xd;
+        &lt;SYS_EVT_TRACE_ID&gt;1020162521701159980059477&lt;/SYS_EVT_TRACE_ID&gt;&#xd;
+        &lt;SYS_SND_SERIAL_NO&gt;0000000000&lt;/SYS_SND_SERIAL_NO&gt;&#xd;
+        &lt;SYS_PKG_TYPE&gt;1&lt;/SYS_PKG_TYPE&gt;&#xd;
+        &lt;SYS_MSG_LEN/&gt;&#xd;
+        &lt;SYS_IS_ENCRYPTED&gt;O&lt;/SYS_IS_ENCRYPTED&gt;&#xd;
+        &lt;SYS_ENCRYPT_TYPE&gt;3&lt;/SYS_ENCRYPT_TYPE&gt;&#xd;
+        &lt;SYS_COMPRESS_TYPE&gt;O&lt;/SYS_COMPRESS_TYPE&gt;&#xd;
+        &lt;SYS_EMB_MSG_LEN/&gt;&#xd;
+        &lt;SYS_REQ_TIME&gt;20231128162620323&lt;/SYS_REQ_TIME&gt;&#xd;
+        &lt;SYS_TIME_LEFT&gt;000120000&lt;/SYS_TIME_LEFT&gt;&#xd;
+        &lt;SYS_PKG_STS_TYPE&gt;00&lt;/SYS_PKG_STS_TYPE&gt;&#xd;
+        &lt;SYS_SEC_CONTEXT_LEN/&gt;&#xd;
+    &lt;/TX_HEADER&gt;&#xd;
+    &lt;TX_BODY&gt;&#xd;
+        &lt;COMON&gt;&#xd;
+            &lt;COM1&gt;&#xd;
+                &lt;TXN_INSID&gt;010111111&lt;/TXN_INSID&gt;&#xd;
+                &lt;TXN_ITT_CHNL_ID&gt;001&lt;/TXN_ITT_CHNL_ID&gt;&#xd;
+                &lt;TXN_ITT_CHNL_CGY_CODE&gt;99999999&lt;/TXN_ITT_CHNL_CGY_CODE&gt;&#xd;
+                &lt;TXN_DT&gt;20231128&lt;/TXN_DT&gt;&#xd;
+                &lt;TXN_TM&gt;162620&lt;/TXN_TM&gt;&#xd;
+                &lt;TXN_STFF_ID&gt;50087150&lt;/TXN_STFF_ID&gt;&#xd;
+                &lt;MULTI_TENANCY_ID&gt;CNOOO&lt;/MULTI_TENANCY_ID&gt;&#xd;
+                &lt;MULTILTENANCY_NAME&gt;中国建设银行&lt;/MULTILTENANCY_NAME&gt;&#xd;
+                &lt;LOC_CCY&gt;CNY&lt;/LOC_CCY&gt;&#xd;
+                &lt;COUN_CD&gt;CHN&lt;/COUN_CD&gt;&#xd;
+                &lt;LNG_ID&gt;zh-cn&lt;/LNG_ID&gt;&#xd;
+                &lt;BSN_MT_ENT_IDR&gt;CN0OO&lt;/BSN_MT_ENT_IDR&gt;&#xd;
+                &lt;TM_ZONE&gt;UTC+8&lt;/TM_ZONE&gt;&#xd;
+                &lt;TM_DIF&gt;0&lt;/TM_DIF&gt;&#xd;
+                &lt;TM_ORG&gt;000000000&lt;/TM_ORG&gt;&#xd;
+                &lt;BAL_ORG&gt;000000000&lt;/BAL_ORG&gt;&#xd;
+                &lt;ACC_ID&gt;0&lt;/ACC_ID&gt;&#xd;
+                &lt;CLIENT_TM&gt;UTC+8&lt;/CLIENT_TM&gt;&#xd;
+            &lt;/COM1&gt;&#xd;
+            &lt;COM2&gt;&#xd;
+                &lt;BLNG_INST_NM&gt;某某事业群&lt;/BLNG_INST_NM&gt;&#xd;
+                &lt;EMPE_NM&gt;某二五&lt;/EMPE_NM&gt;&#xd;
+                &lt;PID&gt;G005b0000002&lt;/PID&gt;&#xd;
+            &lt;/COM2&gt;&#xd;
+            &lt;COM7&gt;&#xd;
+                &lt;CALL_PRTY_LGC_SBM_ID&gt;AP007&lt;/CALL_PRTY_LGC_SBM_ID&gt;&#xd;
+                &lt;CALL_PRTY_SVC_ID&gt;TESTTX001&lt;/CALL_PRTY_SVC_ID&gt;&#xd;
+                &lt;CALL_PRTY_TXNSRLNO/&gt;&#xd;
+            &lt;/COM7&gt;&#xd;
+        &lt;/COMON&gt;&#xd;
+        &lt;ENTITY&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY1&gt;00000&lt;/BUSINESS_CUSTOM_KEY1&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY2&gt;00000&lt;/BUSINESS_CUSTOM_KEY2&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY3&gt;00000&lt;/BUSINESS_CUSTOM_KEY3&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY4&gt;00000&lt;/BUSINESS_CUSTOM_KEY4&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY5&gt;00000&lt;/BUSINESS_CUSTOM_KEY5&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY6&gt;00000&lt;/BUSINESS_CUSTOM_KEY6&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY7&gt;00000&lt;/BUSINESS_CUSTOM_KEY7&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY8&gt;00000&lt;/BUSINESS_CUSTOM_KEY8&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY9&gt;00000&lt;/BUSINESS_CUSTOM_KEY9&gt;&#xd;
+            &lt;BUSINESS_CUSTOM_KEY10&gt;00000&lt;/BUSINESS_CUSTOM_KEY10&gt;&#xd;
+            &lt;DUPLICATE_KEY&gt;duplicate-value1&lt;/DUPLICATE_KEY&gt;&#xd;
+            &lt;DUPLICATE_KEY&gt;duplicate-value2&lt;/DUPLICATE_KEY&gt;&#xd;
+        &lt;/ENTITY&gt;&#xd;
+    &lt;/TX_BODY&gt;&#xd;
+    &lt;TX_EMB/&gt;&#xd;
+&lt;/TX&gt;</stringProp>
+                <stringProp name="Argument.metadata">=</stringProp>
+              </elementProp>
+            </collectionProp>
+          </elementProp>
+          <stringProp name="HTTPSampler.domain">localhost</stringProp>
+          <stringProp name="HTTPSampler.port">8080</stringProp>
+          <stringProp name="HTTPSampler.path">/timeout</stringProp>
+          <stringProp name="HTTPSampler.method">POST</stringProp>
+          <boolProp name="HTTPSampler.use_keepalive">true</boolProp>
+        </HTTPSamplerProxy>
+        <hashTree>
+          <HeaderManager guiclass="HeaderPanel" testclass="HeaderManager" testname="HTTP Header Manager">
+            <collectionProp name="HeaderManager.headers">
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.name">tx-code</stringProp>
+                <stringProp name="Header.value">tx002</stringProp>
+              </elementProp>
+              <elementProp name="" elementType="Header">
+                <stringProp name="Header.value">application/xml</stringProp>
+                <stringProp name="Header.name">Content-Type</stringProp>
+              </elementProp>
+            </collectionProp>
+          </HeaderManager>
+          <hashTree/>
+        </hashTree>
+        <ResultCollector guiclass="ViewResultsFullVisualizer" testclass="ResultCollector" testname="察看结果树">
+          <boolProp name="ResultCollector.error_logging">true</boolProp>
+          <objProp>
+            <name>saveConfig</name>
+            <value class="SampleSaveConfiguration">
+              <time>true</time>
+              <latency>true</latency>
+              <timestamp>true</timestamp>
+              <success>true</success>
+              <label>true</label>
+              <code>true</code>
+              <message>true</message>
+              <threadName>true</threadName>
+              <dataType>true</dataType>
+              <encoding>false</encoding>
+              <assertions>true</assertions>
+              <subresults>true</subresults>
+              <responseData>false</responseData>
+              <samplerData>false</samplerData>
+              <xml>false</xml>
+              <fieldNames>true</fieldNames>
+              <responseHeaders>false</responseHeaders>
+              <requestHeaders>false</requestHeaders>
+              <responseDataOnError>false</responseDataOnError>
+              <saveAssertionResultsFailureMessage>true</saveAssertionResultsFailureMessage>
+              <assertionsResultsToSave>0</assertionsResultsToSave>
+              <bytes>true</bytes>
+              <sentBytes>true</sentBytes>
+              <url>true</url>
+              <threadCounts>true</threadCounts>
+              <idleTime>true</idleTime>
+              <connectTime>true</connectTime>
+            </value>
+          </objProp>
+          <stringProp name="filename"></stringProp>
+        </ResultCollector>
+        <hashTree/>
+        <ResponseAssertion guiclass="AssertionGui" testclass="ResponseAssertion" testname="响应断言">
+          <collectionProp name="Asserion.test_strings">
+            <stringProp name="52473">504</stringProp>
+          </collectionProp>
+          <stringProp name="Assertion.custom_message"></stringProp>
+          <stringProp name="Assertion.test_field">Assertion.response_code</stringProp>
+          <boolProp name="Assertion.assume_success">false</boolProp>
+          <intProp name="Assertion.test_type">8</intProp>
+        </ResponseAssertion>
+        <hashTree/>
+      </hashTree>
+    </hashTree>
+  </hashTree>
+</jmeterTestPlan>
