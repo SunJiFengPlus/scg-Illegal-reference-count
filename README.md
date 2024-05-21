@@ -22,6 +22,11 @@ Provide a http interface with the path “/hello”, which will return immediate
 ### scg-app
 A Spring Cloud Gateway application, which will route requests to the error-provider and normal-provider. More information can be found in [RouteLocatorConfig.java](scg-app%2Fsrc%2Fmain%2Fjava%2Forg%2Fexample%2Fscgapp%2Fconfig%2FRouteLocatorConfig.java).<br>
 
+In the application.properties file, the response timeout is set to 500ms, so that "error" route will timeout
+```properties
+spring.cloud.gateway.httpclient.response-timeout=500ms
+```
+
 ### jemter-consumer
 An embedded JMeter program that sends requests to scg-app.
 
